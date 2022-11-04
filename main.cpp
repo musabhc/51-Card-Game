@@ -8,7 +8,7 @@
 bool isPcOpened = false;
 bool isUserOpened = false;
 
-void printOpenedDeckList(vector<Deck> &openedDeck) {
+void printOpenedDeckList(vector<Deck>& openedDeck) {
     for (int i = 0; i < openedDeck.size(); ++i) {
         Deck deck = openedDeck.at(i);
         deck.printDeck();
@@ -16,7 +16,7 @@ void printOpenedDeckList(vector<Deck> &openedDeck) {
     cout << endl;
 }
 
-bool hasDualDeck(vector<Deck> &openedDeck) {
+bool hasDualDeck(vector<Deck>& openedDeck) {
     for (int i = 0; i < openedDeck.size(); ++i) {
         Deck deck = openedDeck.at(i);
         if (deck.getCards().size() == 2) {
@@ -26,7 +26,7 @@ bool hasDualDeck(vector<Deck> &openedDeck) {
     return false;
 }
 
-bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDeck, bool isPc) //seÃ§im ekranÄ±
+bool makeSelection(Hand& hand, Deck& floor, Deck& table, vector<Deck>& openedDeck, bool isPc) //seçim ekraný
 {
 
     string cardThrowWarning = "Once kart atmalisiniz";
@@ -38,17 +38,20 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
     string floorDeckP = "Floor: ";
     bool isTurn = false;
     int selection;
-    if (!isPc) //eÄŸer sÄ±ra bilgisayarda deÄŸilse menÃ¼yÃ¼ seÃ§imi alÄ±cÄ± fonksiyon ile beraber Ã§aÄŸÄ±r.
+    if (!isPc) //eðer sýra bilgisayarda deðilse menüyü seçimi alýcý fonksiyon ile beraber çaðýr.
     {
-        selection = menu().getSelection(); //menÃ¼nÃ¼n seÃ§im alÄ±cÄ± ile Ã§aÄŸÄ±rÄ±lmasÄ±
-    } else {
-        if (hand.getIsDrawCard()) //sÄ±ra bilgisayarda ise kart Ã§ekip Ã§ekmediÄŸini kontrol et eÄŸer true ise
+        selection = menu().getSelection(); //menünün seçim alýcý ile çaðýrýlmasý
+    }
+    else {
+        if (hand.getIsDrawCard()) //sýra bilgisayarda ise kart çekip çekmediðini kontrol et eðer true ise
         {
-            selection = 3; //3 numaralÄ± ifÂ´e git
-        } else {
+            selection = 3; //3 numaralý if´e git
+        }
+        else {
             if (hand.isCardHandleFunc()) {
-                selection = 2; //deÄŸilse 2 numaralÄ± ifÂ´e git
-            } else {
+                selection = 2; //deðilse 2 numaralý if´e git
+            }
+            else {
                 selection = 0;
             }
 
@@ -85,9 +88,9 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
                             Deck deck = openedDeck.at(i);
                             if (deck.getCards().size() > 2) {//seri demek oluyor
                                 if ((deck.getCards().at(0).getCardNumber() ==
-                                     deck.getCards().at(1).getCardNumber()) &&
+                                    deck.getCards().at(1).getCardNumber()) &&
                                     (deck.getCards().at(0).getCardNumber() ==
-                                     foundCard.getCardNumber()) && (deck.getCards().size() < 4)) {//Renk dizili
+                                        foundCard.getCardNumber()) && (deck.getCards().size() < 4)) {//Renk dizili
                                     for (int j = 0; j < deck.getCards().size(); ++j) {
                                         Card card = deck.getCards().at(j);
                                         if (foundCard.getCardType() != card.getCardType()) {
@@ -96,17 +99,19 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
                                             break;
                                         }
                                     }
-                                } else if ((deck.getCards().at(0).getCardNumber() !=
-                                            deck.getCards().at(1).getCardNumber()) && (foundCard.getCardType() ==
-                                                                                       deck.getCards().at(
-                                                                                               0).getCardType())) {
+                                }
+                                else if ((deck.getCards().at(0).getCardNumber() !=
+                                    deck.getCards().at(1).getCardNumber()) && (foundCard.getCardType() ==
+                                        deck.getCards().at(
+                                            0).getCardType())) {
                                     Card firstCard = deck.getCards().at(0);
                                     Card lastCard = deck.getCards().at(deck.getCards().size() - 1);
                                     if (firstCard.getCardNumber() - foundCard.getCardNumber() == 1) {
                                         deck.addCardToFront(foundCard);
                                         hand.removeCard(foundCard);
                                         break;
-                                    } else if (foundCard.getCardNumber() - lastCard.getCardNumber() == 1) {
+                                    }
+                                    else if (foundCard.getCardNumber() - lastCard.getCardNumber() == 1) {
                                         deck.addCardToBack(foundCard);
                                         hand.removeCard(foundCard);
                                         break;
@@ -119,20 +124,24 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
                             //
 
                         }
-                    } else //kart bulunamadÄ±ysa yani kullanÄ±cÄ± yanlÄ±ÅŸ numara girdiyse
+                    }
+                    else //kart bulunamadýysa yani kullanýcý yanlýþ numara girdiyse
                     {
-                        cout << cardCantFind << endl; //kartÄ±n bulunamadÄ±ÄŸÄ±nÄ± kullanÄ±cÄ±ya bildir
+                        cout << cardCantFind << endl; //kartýn bulunamadýðýný kullanýcýya bildir
                     }
 
-                } else {
+                }
+                else {
                     cout << "Once kart cekmelisin" << endl;
                 }
 
 
-            } else {
+            }
+            else {
                 cout << "Elin acik degil" << endl;
             }
-        } else {
+        }
+        else {
             if (isPcOpened) {
                 if (hand.getIsDrawCard()) {
                     for (int i = 0; i < hand.getCards().size(); ++i) {
@@ -143,9 +152,9 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
                             Deck deck = openedDeck.at(i);
                             if (deck.getCards().size() > 2) {//seri demek oluyor
                                 if ((deck.getCards().at(0).getCardNumber() ==
-                                     deck.getCards().at(1).getCardNumber()) &&
+                                    deck.getCards().at(1).getCardNumber()) &&
                                     (deck.getCards().at(0).getCardNumber() ==
-                                     foundCard.getCardNumber()) && (deck.getCards().size() < 4)) {//Renk dizili
+                                        foundCard.getCardNumber()) && (deck.getCards().size() < 4)) {//Renk dizili
                                     for (int j = 0; j < deck.getCards().size(); ++j) {
                                         Card card = deck.getCards().at(j);
                                         if (foundCard.getCardType() != card.getCardType()) {
@@ -154,17 +163,19 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
                                             break;
                                         }
                                     }
-                                } else if ((deck.getCards().at(0).getCardNumber() !=
-                                            deck.getCards().at(1).getCardNumber()) && (foundCard.getCardType() ==
-                                                                                       deck.getCards().at(
-                                                                                               0).getCardType())) {
+                                }
+                                else if ((deck.getCards().at(0).getCardNumber() !=
+                                    deck.getCards().at(1).getCardNumber()) && (foundCard.getCardType() ==
+                                        deck.getCards().at(
+                                            0).getCardType())) {
                                     Card firstCard = deck.getCards().at(0);
                                     Card lastCard = deck.getCards().at(deck.getCards().size() - 1);
                                     if (firstCard.getCardNumber() - foundCard.getCardNumber() == 1) {
                                         deck.addCardToFront(foundCard);
                                         hand.removeCard(foundCard);
                                         break;
-                                    } else if (foundCard.getCardNumber() - lastCard.getCardNumber() == 1) {
+                                    }
+                                    else if (foundCard.getCardNumber() - lastCard.getCardNumber() == 1) {
                                         deck.addCardToBack(foundCard);
                                         hand.removeCard(foundCard);
                                         break;
@@ -181,65 +192,73 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
                     }
 
 
-                } else {
+                }
+                else {
                     //pc daha kart cekmemis
                 }
 
 
-            } else {
+            }
+            else {
                 //pcnin eli acik degil
             }
         }
         hand.setIsCardHandle(true);
 
 
-    } else if (selection == 1) {
-        if (!hand.getIsDrawCard()) //eÄŸer
+    }
+    else if (selection == 1) {
+        if (!hand.getIsDrawCard()) //eðer
         {
-            cout << cardThrowWarning << endl; // kart Ã§ekmesi iÃ§in uyarÄ± ver
+            cout << cardThrowWarning << endl; // kart çekmesi için uyarý ver
             return false;
-        } else //eÄŸer kart Ã§ekilmiÅŸse
+        }
+        else //eðer kart çekilmiþse
         {
             Card floorCard = floor.getCards().at(
-                    0); //yerdeki kartlarÄ± temsilen bir obje oluÅŸtur bu objeye destenin en baÅŸÄ±ndaki kartÄ± ekle
-            hand.addCardToBack(floorCard); // yerdeki kartÄ± eldeki kartlarÄ±n en sonuna ekle
-            floor.removeCard(floorCard); // yerdeki kartÄ± sil Ã§Ã¼nkÃ¼ ele aldÄ±k
-            hand.setIsDrawCard(false); // kart Ã§ektiÄŸini false yap
-            if (!isPc) //sÄ±ra bilgisayarda mÄ± kontrol et
+                0); //yerdeki kartlarý temsilen bir obje oluþtur bu objeye destenin en baþýndaki kartý ekle
+            hand.addCardToBack(floorCard); // yerdeki kartý eldeki kartlarýn en sonuna ekle
+            floor.removeCard(floorCard); // yerdeki kartý sil çünkü ele aldýk
+            hand.setIsDrawCard(false); // kart çektiðini false yap
+            if (!isPc) //sýra bilgisayarda mý kontrol et
             {
-                int chosenWay = menu().getWayChoose(); //Ã§ift mi seri mi gidilecek seÃ§im yap
+                int chosenWay = menu().getWayChoose(); //çift mi seri mi gidilecek seçim yap
                 if (chosenWay == 1) // seri git
                 {
-                    hand.setIsSerialHand(true); //elin seri olduÄŸunu bildir
-                    hand.alignSerial(); //kartlarÄ± seri olarak diz
-                } else {
-                    hand.setIsSerialHand(false); //seri gidilmeyeceÄŸini bildir
-                    hand.alignDual(); // kartlarÄ± Ã§ifte olarak diz
+                    hand.setIsSerialHand(true); //elin seri olduðunu bildir
+                    hand.alignSerial(); //kartlarý seri olarak diz
+                }
+                else {
+                    hand.setIsSerialHand(false); //seri gidilmeyeceðini bildir
+                    hand.alignDual(); // kartlarý çifte olarak diz
                 }
             }
 
         }
 
-    } else if (selection == 3) //bilgisayar kart Ã§ekmiÅŸse
+    }
+    else if (selection == 3) //bilgisayar kart çekmiþse
     {
-        if (!hand.getIsDrawCard()) // kart Ã§ekmediyse uyarÄ± ver
+        if (!hand.getIsDrawCard()) // kart çekmediyse uyarý ver
         {
-            cout << cardThrowWarning << endl; //kart Ã§ekmesi iÃ§in uyarÄ±
+            cout << cardThrowWarning << endl; //kart çekmesi için uyarý
             return false;
-        } else //kart Ã§ekmiÅŸse
+        }
+        else //kart çekmiþse
         {
             Card tableCard = table.getCards().at(
-                    0);  //masa kartÄ± iÃ§in obje oluÅŸturup kartlarÄ±n en baÅŸÄ±ndaki kartÄ± masaya koy
-            hand.addCardToBack(tableCard); //masadaki kartÄ± ele ekle
-            table.removeCard(tableCard); //masadaki kartÄ± sil Ã§Ã¼nkÃ¼ elimizde
-            hand.setIsDrawCard(false); //kart Ã§ekmedi olarak bilgisayara gÃ¶ster
-            if (!isPc) //sÄ±ra bilgisayarda deÄŸilse
+                0);  //masa kartý için obje oluþturup kartlarýn en baþýndaki kartý masaya koy
+            hand.addCardToBack(tableCard); //masadaki kartý ele ekle
+            table.removeCard(tableCard); //masadaki kartý sil çünkü elimizde
+            hand.setIsDrawCard(false); //kart çekmedi olarak bilgisayara göster
+            if (!isPc) //sýra bilgisayarda deðilse
             {
-                int chosenWay = menu().getWayChoose(); //satÄ±r 40Â´da aÃ§Ä±kladÄ±m.
+                int chosenWay = menu().getWayChoose(); //satýr 40´da açýkladým.
                 if (chosenWay == 1) {
                     hand.setIsSerialHand(true);
                     hand.alignSerial();
-                } else {
+                }
+                else {
                     hand.setIsSerialHand(false);
                     hand.alignDual();
                 }
@@ -247,80 +266,86 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
 
         }
 
-    } else if (selection == 2) //kart Ã§ekmediyse
+    }
+    else if (selection == 2) //kart çekmediyse
     {
         if (hand.getIsDrawCard()) //tekrar kontrol
         {
-            cout << cardThrowWarning << endl; //kart Ã§ekmesi iÃ§in uyarÄ± ver
+            cout << cardThrowWarning << endl; //kart çekmesi için uyarý ver
             return false;
-        } else //Ã§ektiyse
+        }
+        else //çektiyse
         {
             while (true) {
                 int kartNumber;
-                if (!isPc) //sÄ±ra bilgisayarda deÄŸilse
+                if (!isPc) //sýra bilgisayarda deðilse
                 {
-                    hand.printHand(); //eldeki kartlarÄ± yazdÄ±r
-                    cout << cardNumberEnter; //hangi kartÄ±n atÄ±lacaÄŸÄ±nÄ± seÃ§mesini sÃ¶ylÃ¼yor
-                    cin >> kartNumber; // seÃ§imi alÄ±yor
+                    hand.printHand(); //eldeki kartlarý yazdýr
+                    cout << cardNumberEnter; //hangi kartýn atýlacaðýný seçmesini söylüyor
+                    cin >> kartNumber; // seçimi alýyor
                     bool cardFind = false; //kart mevcut mu
                     for (int i = 0; i <
-                                    hand.getCards().size(); ++i) //kartlarÄ± kontrol ederek kullanÄ±cÄ±nÄ±n yazdÄ±ÄŸÄ± kartÄ±n mevcut olup olmadÄ±ÄŸÄ±na bakÄ±yor
+                        hand.getCards().size(); ++i) //kartlarý kontrol ederek kullanýcýnýn yazdýðý kartýn mevcut olup olmadýðýna bakýyor
                     {
-                        Card card = hand.getCards().at(i); //her bir kartÄ± card adÄ±ndaki bir objeye atÄ±yor
+                        Card card = hand.getCards().at(i); //her bir kartý card adýndaki bir objeye atýyor
                         if (card.getId() ==
-                            kartNumber) //eÄŸer kullanÄ±cÄ±nÄ±n yazdÄ±ÄŸÄ± numara ile objedeki numara uyuÅŸuyorsa
+                            kartNumber) //eðer kullanýcýnýn yazdýðý numara ile objedeki numara uyuþuyorsa
                         {
-                            floor.addCardToFront(card); //kartÄ± yere atÄ±yor
-                            hand.removeCard(card); //kartÄ± elden siliyor
-                            cardFind = true; //kartÄ±n bulunduÄŸunu sisteme bildiriyor
-                            break; //aÅŸamadan Ã§Ä±kÄ±yor
+                            floor.addCardToFront(card); //kartý yere atýyor
+                            hand.removeCard(card); //kartý elden siliyor
+                            cardFind = true; //kartýn bulunduðunu sisteme bildiriyor
+                            break; //aþamadan çýkýyor
                         }
 
                     }
-                    if (cardFind) //eÄŸer kart bulunduysa
+                    if (cardFind) //eðer kart bulunduysa
                     {
-                        hand.setIsDrawCard(true); //kart Ã§ekti diye sisteme bildiriyor
-                        int chosenWay = menu().getWayChoose(); //kullanÄ±cÄ±nÄ±n yapacaÄŸÄ± seÃ§im iÃ§in menÃ¼yÃ¼ Ã§aÄŸÄ±rÄ±yor.
-                        if (chosenWay == 1) //40. satÄ±r
+                        hand.setIsDrawCard(true); //kart çekti diye sisteme bildiriyor
+                        int chosenWay = menu().getWayChoose(); //kullanýcýnýn yapacaðý seçim için menüyü çaðýrýyor.
+                        if (chosenWay == 1) //40. satýr
                         {
                             hand.setIsSerialHand(true);
                             hand.alignSerial();
-                        } else {
+                        }
+                        else {
                             hand.setIsSerialHand(false);
                             hand.alignDual();
                         }
                         break;
-                    } else //kart bulunamadÄ±ysa yani kullanÄ±cÄ± yanlÄ±ÅŸ numara girdiyse
-                    {
-                        cout << cardCantFind << endl; //kartÄ±n bulunamadÄ±ÄŸÄ±nÄ± kullanÄ±cÄ±ya bildir
                     }
-                } else //sÄ±ra bilgisayarda ise
+                    else //kart bulunamadýysa yani kullanýcý yanlýþ numara girdiyse
+                    {
+                        cout << cardCantFind << endl; //kartýn bulunamadýðýný kullanýcýya bildir
+                    }
+                }
+                else //sýra bilgisayarda ise
                 {
                     if (!hand.getOtherCardHand().getCards().empty()) {
-                        Card card = hand.getOtherCardHand().getCards().at(0); //bilgisayarÄ± bir kart alÄ±yor
-                        floor.addCardToFront(card); //yere kart atÄ±yor
-                        hand.removeCard(card); //elinden attÄ±ÄŸÄ± kart siliniyor
-                        hand.setIsDrawCard(true); //bilgisayarÄ±n kart Ã§ektiÄŸi sisteme bildiriliyor.
+                        Card card = hand.getOtherCardHand().getCards().at(0); //bilgisayarý bir kart alýyor
+                        floor.addCardToFront(card); //yere kart atýyor
+                        hand.removeCard(card); //elinden attýðý kart siliniyor
+                        hand.setIsDrawCard(true); //bilgisayarýn kart çektiði sisteme bildiriliyor.
                         break;
                     }
-                    //else | pc kazanÄ±r lakin bunu tur dÃ¶ngÃ¼sÃ¼nÃ¼n en baÅŸÄ±nda kontrol edeceÄŸiz.
+                    //else | pc kazanýr lakin bunu tur döngüsünün en baþýnda kontrol edeceðiz.
                 }
             }
-            isTurn = true; //tur bittiÄŸini sisteme bildir
+            isTurn = true; //tur bittiðini sisteme bildir
         }
         hand.setIsCardHandle(false);
 
-    } else if (selection == 4) {
-        int total = 0; //geÃ§ici deÄŸiÅŸkenler tanÄ±mladÄ±k
-        //hand.alignSerial(); SERÄ° DÄ°ZÄ°M OLMAZSA DÄ°YE
+    }
+    else if (selection == 4) {
+        int total = 0; //geçici deðiþkenler tanýmladýk
+        //hand.alignSerial(); SERÝ DÝZÝM OLMAZSA DÝYE
 
-        for (int k = 0; k < hand.getSerialAlignedHand().size(); k++) //seri kartlarÄ± tarÄ±yoruz
+        for (int k = 0; k < hand.getSerialAlignedHand().size(); k++) //seri kartlarý tarýyoruz
         {
-            Deck deck; //geÃ§ici deck oluÅŸturuyoruz
-            deck = hand.getSerialAlignedHand().at(k); //geÃ§ici deÄŸiÅŸkene ata
-            for (int i = 0; i < deck.getCards().size(); i++) //geÃ§ici deÄŸiÅŸkeni taramaya baÅŸla
+            Deck deck; //geçici deck oluþturuyoruz
+            deck = hand.getSerialAlignedHand().at(k); //geçici deðiþkene ata
+            for (int i = 0; i < deck.getCards().size(); i++) //geçici deðiþkeni taramaya baþla
             {
-                total += deck.getCards().at(i).getCardNumber(); //tempe ilk kartÄ±n numarasÄ±nÄ± atÄ±yoruz
+                total += deck.getCards().at(i).getCardNumber(); //tempe ilk kartýn numarasýný atýyoruz
             }
         }
         cout << total << endl; //TOTAL
@@ -340,11 +365,13 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
             }
             hand.clearSerialHand();
 
-        } else {
+        }
+        else {
             cout << serialOpenError << endl;
         }
         return false;
-    } else if (selection == 5) {
+    }
+    else if (selection == 5) {
         if (hand.getDualAlignedHand().size() >= 5) {
             cout << "CIFT ACTIK" << endl;
             isUserOpened = true;
@@ -358,7 +385,8 @@ bool makeSelection(Hand &hand, Deck &floor, Deck &table, vector<Deck> &openedDec
                 }
             }
             hand.clearDualHand();
-        } else {
+        }
+        else {
             cout << dualOpenError << endl;
         }
         return false;
@@ -375,11 +403,11 @@ int main() {
     string userWon = "You won the game! Press 1 to restart game and press anything else to exit: ";
     string draw = "Game draw! Press 1 to restart game and press anything else to exit: ";
     string line = "--------------------------------------------------------------------", lastCard = "---------- SON KART----------";
-    Deck table, floor; // masa ve yeri tanÄ±mla
+    Deck table, floor; // masa ve yeri tanýmla
     vector<Deck> openedDecks;
-    // table tÃ¼m kartlarÄ±n bulunduÄŸu
-    Hand my, pc; //kullanÄ±cÄ± ve bilgisayarÄ±n ellerinin objelerini oluÅŸtur
-    restart:
+    // table tüm kartlarýn bulunduðu
+    Hand my, pc; //kullanýcý ve bilgisayarýn ellerinin objelerini oluþtur
+restart:
     table.clear();
     my.clear();
     pc.clear();
@@ -390,33 +418,36 @@ int main() {
         CardType cardType = maca;
         if (i / 13 == 0 || i / 13 == 4) {
             cardType = maca;
-        } else if (i / 13 == 1 || i / 13 == 5) {
+        }
+        else if (i / 13 == 1 || i / 13 == 5) {
             cardType = sinek;
-        } else if (i / 13 == 2 || i / 13 == 6) {
+        }
+        else if (i / 13 == 2 || i / 13 == 6) {
             cardType = kupa;
-        } else if (i / 13 == 3 || i / 13 == 7) {
+        }
+        else if (i / 13 == 3 || i / 13 == 7) {
             cardType = karo;
         }
         Card card(i, (i % 13) + 2, cardType);
         table.addCardToBack(card);
     }
 
-    //KartlarÄ±n karÄ±lmasÄ±
-    table.mixDeck(); //kartlarÄ± karÄ±ÅŸtÄ±rt
-    //table.printDeck(); //kartlarÄ± yazdÄ±r TEST Ã–GESÄ°
+    //Kartlarýn karýlmasý
+    table.mixDeck(); //kartlarý karýþtýrt
+    //table.printDeck(); //kartlarý yazdýr TEST ÖGESÝ
 
     //Kart secimi
-    Card random1 = table.getRandomCard(); //rastgele bir kart seÃ§
+    Card random1 = table.getRandomCard(); //rastgele bir kart seç
     table.moveToEnd(random1); //bunu en sona at
-    cout << endl; //boÅŸluk bÄ±rak
-    // table.printDeck(); // masadaki kartlarÄ± (bÃ¼tÃ¼n desteyi) yazdÄ±r. TEST Ã–GESÄ°
+    cout << endl; //boþluk býrak
+    // table.printDeck(); // masadaki kartlarý (bütün desteyi) yazdýr. TEST ÖGESÝ
 
-    //KartlarÄ± daÄŸÄ±t
-    int myHandSize = my.getCards().size(); //eldeki kartlarÄ±n miktarÄ±nÄ± al
+    //Kartlarý daðýt
+    int myHandSize = my.getCards().size(); //eldeki kartlarýn miktarýný al
     for (int i = 0; i < 28; ++i) {
-        Card card = table.getCards().at(i);//masadaki i. kartlarÄ± alÄ±p card objesine atÄ±yor
+        Card card = table.getCards().at(i);//masadaki i. kartlarý alýp card objesine atýyor
         if (i % 4 == 0 ||
-            i % 4 == 1) //iÂ´nin 4Â´e tam bÃ¶lÃ¼mÃ¼nÃ¼ Ã¶zel olarak kontrol ediyor yani 2 kart pcye 2 kart ise bize verecek
+            i % 4 == 1) //i´nin 4´e tam bölümünü özel olarak kontrol ediyor yani 2 kart pcye 2 kart ise bize verecek
         {
             if (myHandSize == 1 && i == 0) {
                 continue;
@@ -425,54 +456,56 @@ int main() {
                 continue;
             }
             my.addCardToBack(card); //bize kart verdi
-            table.removeCard(card); //desteden o kartÄ± sildi
-        } else if (i % 4 == 2 || i % 4 == 3) {
+            table.removeCard(card); //desteden o kartý sildi
+        }
+        else if (i % 4 == 2 || i % 4 == 3) {
             pc.addCardToBack(card); //pcye verdi
             table.removeCard(card); //desteden sildi
         }
     }
     //fazla karti ekleme (15. kart)
-    Card card = table.getCards().at(0); //fazla kartÄ± objeye atayÄ±p
+    Card card = table.getCards().at(0); //fazla kartý objeye atayýp
     my.addCardToBack(card); // bizim destemize ekledi
     table.removeCard(card); //ve desteden sildi
 
     cout << endl;
-    cout << lastCard << endl; //destenin sonundaki kartÄ±n yazÄ±lacaÄŸÄ±nÄ± bildiren string
+    cout << lastCard << endl; //destenin sonundaki kartýn yazýlacaðýný bildiren string
 
-    table.getCards().at(table.getCards().size() - 1).printCard(); //destenin en sonundaki kartÄ± yazdÄ±rÄ±yoruz
+    table.getCards().at(table.getCards().size() - 1).printCard(); //destenin en sonundaki kartý yazdýrýyoruz
 
     cout << endl;
     cout << endl;
 
-    cout << userDeck << endl; //MY Hand yazÄ±sÄ±
+    cout << userDeck << endl; //MY Hand yazýsý
     cout << line << endl; // "----"ler
 
-    my.printDeck(); // kendi destemizi yazdÄ±rdÄ±k
+    my.printDeck(); // kendi destemizi yazdýrdýk
 
     /*
 
     cout << endl;
     cout << endl;
 
-    cout << pcDeck << endl; // BilgisayarÄ±n destesi
+    cout << pcDeck << endl; // Bilgisayarýn destesi
     cout << line << endl; // "---"ler
 
-    pc.printDeck(); //bilgisayarÄ±n destesi yazÄ±ldÄ±
+    pc.printDeck(); //bilgisayarýn destesi yazýldý
 
     */
 
-    int chosenWay = menu().getWayChoose(); //tek-Ã§ift gidiÅŸ sorgusu
-    if (chosenWay == 1) //40.satÄ±r
+    int chosenWay = menu().getWayChoose(); //tek-çift gidiþ sorgusu
+    if (chosenWay == 1) //40.satýr
     {
         my.setIsSerialHand(true);
         my.alignSerial();
-    } else {
+    }
+    else {
         my.setIsSerialHand(false);
         my.alignDual();
     }
 
-    cout << userHandS << endl; //elimizi bastÄ±racaÄŸÄ±z
-    my.printHand(); //elimizi bastÄ±rdÄ±k
+    cout << userHandS << endl; //elimizi bastýracaðýz
+    my.printHand(); //elimizi bastýrdýk
 
     cout << endl;
     cout << endl;
@@ -480,11 +513,11 @@ int main() {
     cout << pcHandS << endl;
     pc.setIsSerialHand(true);
     pc.alignSerial();
-    //pc.printHand(); //test Ã¶gesi
+    //pc.printHand(); //test ögesi
 
     //OYUNUN OYNANMASI
-    int turn = 0; //TUR SAYISI 0DAN BAÅžLAR
-    my.setIsDrawCard(false); // kart Ã§ekmediÄŸimiz sisteme bildirilir
+    int turn = 0; //TUR SAYISI 0DAN BAÞLAR
+    my.setIsDrawCard(false); // kart çekmediðimiz sisteme bildirilir
     while (true) {
         if (my.getCards().size() == 0) {
             int s;
@@ -492,19 +525,23 @@ int main() {
             cin >> s;
             if (s == 1) {
                 goto restart;
-            } else {
+            }
+            else {
                 exit(1);
             }
-        } else if (pc.getCards().empty()) {
+        }
+        else if (pc.getCards().empty()) {
             int s;
             cout << pcWon << endl;
             cin >> s;
             if (s == 1) {
                 goto restart;
-            } else {
+            }
+            else {
                 exit(1);
             }
-        } else if (table.getCards().empty()) {
+        }
+        else if (table.getCards().empty()) {
             if (isUserOpened == false && isPcOpened == false) {
                 cout << "Game Draw" << endl;
                 int last;
@@ -512,28 +549,34 @@ int main() {
                 cin >> last;
                 if (last == 1) {
                     goto restart;
-                } else {
+                }
+                else {
                     exit(1);
                 }
-            } else if (isUserOpened == true && isPcOpened == false) {
+            }
+            else if (isUserOpened == true && isPcOpened == false) {
                 int s;
                 cout << userWon << endl;
                 cin >> s;
                 if (s == 1) {
                     goto restart;
-                } else {
+                }
+                else {
                     exit(1);
                 }
-            } else if (isUserOpened == false && isPcOpened == true) {
+            }
+            else if (isUserOpened == false && isPcOpened == true) {
                 int s;
                 cout << pcWon << endl;
                 cin >> s;
                 if (s == 1) {
                     goto restart;
-                } else {
+                }
+                else {
                     exit(1);
                 }
-            } else if (isUserOpened == true && isPcOpened == true) {
+            }
+            else if (isUserOpened == true && isPcOpened == true) {
                 int userTotal = 0, pcTotal = 0;
                 for (int i = 0; i < my.getCards().size(); i++) {
                     userTotal += my.getCards().at(i).getCardNumber();
@@ -547,25 +590,30 @@ int main() {
                     cin >> s;
                     if (s == 1) {
                         goto restart;
-                    } else {
+                    }
+                    else {
                         exit(1);
                     }
-                } else if (pcTotal < userTotal) {
+                }
+                else if (pcTotal < userTotal) {
                     int s;
                     cout << pcWon << endl;
                     cin >> s;
                     if (s == 1) {
                         goto restart;
-                    } else {
+                    }
+                    else {
                         exit(1);
                     }
-                } else {
+                }
+                else {
                     int s;
                     cout << draw << endl;
                     cin >> s;
                     if (s == 1) {
                         goto restart;
-                    } else {
+                    }
+                    else {
                         exit(1);
                     }
                 }
@@ -579,13 +627,14 @@ int main() {
             if (isTurn) {
                 turn += 1;
             }
-        } else {
-            //pcnin sÄ±rasÄ±
+        }
+        else {
+            //pcnin sýrasý
             bool isTurn = makeSelection(pc, floor, table, openedDecks, true);
             cout << pcHandS << endl;
             pc.setIsSerialHand(true);
             pc.alignSerial();
-            //pc.printHand(); //TEST Ã–GESÄ°
+            //pc.printHand(); //TEST ÖGESÝ
             if (isTurn) {
                 turn += 1;
             }
@@ -593,8 +642,8 @@ int main() {
     }
 
 
-//    my.alignSerial();
-//    pc.alignSerial();
+    //    my.alignSerial();
+    //    pc.alignSerial();
 
 
     per(my, pc);

@@ -1,0 +1,51 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.33.31630.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/crew.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "1d9a11fdba6a242c405a0ffe670c2023d62cf4e19346ad68cadc703a2b30eb80"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/startup.h"
+          },
+          "hashes": {
+            "sha-256": "7d48391ab177b9361ebace059abce1b13962c6e62f6a06dc99c00fc6fd5e8e94"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/crew.h"
+          },
+          "hashes": {
+            "sha-256": "8b1a8720613fa46b88c641f2943a19d389d6b6a7f3f844eea1ef501de5c9382c"
+          }
+        }
+      ]
+    }
+  ]
+}

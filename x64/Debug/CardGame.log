@@ -1,0 +1,24 @@
+﻿  card.cpp
+  crew.cpp
+  deck.cpp
+C:\Users\mbhc4\source\repos\CardGame\CardGame\deck.cpp(24,31): warning C4267: 'başlatılıyor': 'size_t' - 'int' dönüşümü; veri kaybı olabilir
+C:\Users\mbhc4\source\repos\CardGame\CardGame\deck.cpp(43,15): warning C4244: 'bağımsız değişken': 'time_t' - 'unsigned int' dönüşümü; veri kaybı olabilir
+C:\Users\mbhc4\source\repos\CardGame\CardGame\deck.cpp(64,15): warning C4244: 'bağımsız değişken': 'time_t' - 'unsigned int' dönüşümü; veri kaybı olabilir
+  hand.cpp
+  kurallar.cpp
+  main.cpp
+C:\Users\mbhc4\source\repos\CardGame\CardGame\main.cpp(446,42): warning C4267: 'başlatılıyor': 'size_t' - 'int' dönüşümü; veri kaybı olabilir
+  menu.cpp
+  per.cpp
+  renkSecim.cpp
+  startup.cpp
+  C/C++ İçin Code Analysis Çalıştırılıyor...
+  Kod Üretiliyor...
+C:\Users\mbhc4\source\repos\CardGame\CardGame\card.cpp(49): warning C4715: 'Card::getCardTypeName': tüm denetim yolları değer döndürmez
+  CardGame.vcxproj -> C:\Users\mbhc4\source\repos\CardGame\x64\Debug\CardGame.exe
+C:\Users\mbhc4\source\repos\CardGame\CardGame\deck.cpp(29): warning C26451: Aritmetik taşma: '+' işleci bir 4 bayt değer üzerinde kullanılarak sonuç bir 8 bayt değere dönüştürülüyor. Taşmayı önlemek için '+' işlecini çağırmadan önce değeri daha geniş bir türe dönüştürün (io.2).
+C:\Users\mbhc4\source\repos\CardGame\CardGame\deck.cpp(32): warning C26451: Aritmetik taşma: '+' işleci bir 4 bayt değer üzerinde kullanılarak sonuç bir 8 bayt değere dönüştürülüyor. Taşmayı önlemek için '+' işlecini çağırmadan önce değeri daha geniş bir türe dönüştürün (io.2).
+C:\Users\mbhc4\source\repos\CardGame\CardGame\menu.h(22): warning C26495: 'menu::selection' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6).
+C:\Users\mbhc4\source\repos\CardGame\CardGame\main.cpp(649): warning C26444: Adı olmayan bir yerel değişkeni bildirmeye çalışmayın (es.84).
+C:\Users\mbhc4\source\repos\CardGame\CardGame\main.cpp(651): warning C26444: Adı olmayan bir yerel değişkeni bildirmeye çalışmayın (es.84).
+C:\Users\mbhc4\source\repos\CardGame\CardGame\hand.h(64): warning C26495: 'Hand::isSerialHand' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6).

@@ -15,11 +15,11 @@ public:
 
     void alignDual();
 
-    const vector<Deck> &getSerialAlignedHand() const;
+    const vector<Deck>& getSerialAlignedHand() const;
 
-    const vector<Deck> &getDualAlignedHand() const;
+    const vector<Deck>& getDualAlignedHand() const;
 
-    const Deck &getOtherCardHand() const;
+    const Deck& getOtherCardHand() const;
 
     bool isSerial() const {
         return isSerialHand;

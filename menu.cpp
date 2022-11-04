@@ -7,7 +7,7 @@ using namespace std;
 
 int menu::getWayChoose()
 {
-    //Tek Ã§ift gitme
+    //Tek çift gitme
     cout << endl;
     cout << line << endl;
     cout << endl;
@@ -24,7 +24,7 @@ int menu::getWayChoose()
 
 int menu::getSelection()
 {
-    //Kart al-Ã§ek
+    //Kart al-çek
     cout << line << endl;
     cout << endl;
     cout << skills << endl;

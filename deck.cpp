@@ -1,12 +1,12 @@
 #include "deck.h"
 
 
-void Deck::addCardToBack(Card card) //gelen kartÄ± en sona ekleme
+void Deck::addCardToBack(Card card) //gelen kartı en sona ekleme
 {
     this->cards.push_back(card);
 }
 
-void Deck::addCardToFront(Card card) // baÅŸa kart ekleme
+void Deck::addCardToFront(Card card) // başa kart ekleme
 {
     this->cards.insert(this->cards.begin(), card);
 }
@@ -14,21 +14,21 @@ void Deck::addCardToFront(Card card) // baÅŸa kart ekleme
 void Deck::removeCard(Card card) //kart silimi
 {
     vector<Card>::iterator it;
-    it = find(this->cards.begin(), this->cards.end(), card); //ilgili kartÄ±n destede bulunmasÄ± ve yerinin belirlenmesi
-    this->cards.erase(it); //yeri belirlenen kartÄ±n silinmesi
+    it = find(this->cards.begin(), this->cards.end(), card); //ilgili kartın destede bulunması ve yerinin belirlenmesi
+    this->cards.erase(it); //yeri belirlenen kartın silinmesi
 }
 
-void Deck::sortDeck() //destenin sÄ±ralanmasÄ±
+void Deck::sortDeck() //destenin sıralanması
 {
     int i, j;
-    int n = this->cards.size(); //kartlarÄ±n adedi n deÄŸiÅŸkenine atandÄ±
-    for (i = 0; i < n - 1; i++) //toplam kart miktarÄ±nÄ±n 1 eksiÄŸince taranÄ±yor
+    int n = this->cards.size(); //kartların adedi n değişkenine atandı
+    for (i = 0; i < n - 1; i++) //toplam kart miktarının 1 eksiğince taranıyor
     {
-        for (j = 0; j < n - i - 1; j++) //eksik miktarÄ±nÄ±n 1 fazlasÄ± miktarÄ±nca taranÄ±yor
+        for (j = 0; j < n - i - 1; j++) //eksik miktarının 1 fazlası miktarınca taranıyor
         {
-            if (this->cards[j].getId() > this->cards[j + 1].getId()) //Ã¶rneÄŸi 1 numaralÄ± kartÄ±n idsi 10 2 numaralÄ± kartÄ±n idsi 11 ise 1 ve 2 numaralÄ± kartÄ±n++
+            if (this->cards[j].getId() > this->cards[j + 1].getId()) //örneği 1 numaralı kartın idsi 10 2 numaralı kartın idsi 11 ise 1 ve 2 numaralı kartın++
             {
-                //++yeri deÄŸiÅŸtiriliyor.
+                //++yeri değiştiriliyor.
                 this->swap(&this->cards[j], &this->cards[j + 1]);
 
             }
@@ -38,68 +38,68 @@ void Deck::sortDeck() //destenin sÄ±ralanmasÄ±
 
 
 
-void Deck::mixDeck() //destelerin karÄ±ÅŸtÄ±rÄ±lmasÄ±
+void Deck::mixDeck() //destelerin karıştırılması
 {
-    srand(time(NULL)); //random olmasÄ± saÄŸlanÄ±yor
-    for (int i = 0; i < this->cards.size(); ++i)  //kartlarÄ±n tamamÄ± taranÄ±yor
+    srand(time(NULL)); //random olması sağlanıyor
+    for (int i = 0; i < this->cards.size(); ++i)  //kartların tamamı taranıyor
     {
-        int random1 = rand() % cards.size() + 1; //random 1 sayÄ± belirleniyor
-        int random2 = rand() % cards.size() + 1; //random 1 sayÄ± daha belirleniyor
-        random1 = random1 - 1; //bu random sayÄ±dan 1 Ã§Ä±karÄ±lÄ±yor
-        random2 = random2 - 1; //bundan da 1 Ã§Ä±karÄ±lÄ±yor
-        Card temp = cards.at(random1); //geÃ§ici bir deÄŸiÅŸkence belirlenen sayÄ±nÄ±n olduÄŸu konumdaki kart depolanÄ±yor
-        cards.at(random1) = cards.at(random2); //o kart ile diÄŸer random kart yer deÄŸiÅŸtiriliyor
-        cards.at(random2) = temp; // yer deÄŸiÅŸtiren kart tempÂ´e aktarÄ±lÄ±yor.
-/*
-SonuÃ§ olarak 15 ile 17 numaralÄ± kartlar yer deÄŸiÅŸtirmiÅŸ oldu. 1 eksiÄŸinin alÄ±nma sebebi ise en baÅŸta fazladan 1 fazla almamÄ±zdÄ±.
-yani int random1 ve random2 de +1 eklediÄŸimizden Ã¶tÃ¼rÃ¼ 1 eksiÄŸini alÄ±yoruz bu sayede 0 ile 100 arasÄ±ndaki tÃ¼m sayÄ±lara hatasÄ±z ulaÅŸma
-imkanÄ±na sahip oluyoruz.
-*/
+        int random1 = rand() % cards.size() + 1; //random 1 sayı belirleniyor
+        int random2 = rand() % cards.size() + 1; //random 1 sayı daha belirleniyor
+        random1 = random1 - 1; //bu random sayıdan 1 çıkarılıyor
+        random2 = random2 - 1; //bundan da 1 çıkarılıyor
+        Card temp = cards.at(random1); //geçici bir değişkence belirlenen sayının olduğu konumdaki kart depolanıyor
+        cards.at(random1) = cards.at(random2); //o kart ile diğer random kart yer değiştiriliyor
+        cards.at(random2) = temp; // yer değiştiren kart temp´e aktarılıyor.
+        /*
+        Sonuç olarak 15 ile 17 numaralı kartlar yer değiştirmiş oldu. 1 eksiğinin alınma sebebi ise en başta fazladan 1 fazla almamızdı.
+        yani int random1 ve random2 de +1 eklediğimizden ötürü 1 eksiğini alıyoruz bu sayede 0 ile 100 arasındaki tüm sayılara hatasız ulaşma
+        imkanına sahip oluyoruz.
+        */
 
     }
 }
 
-Card Deck::getRandomCard() //rastgele bir kartÄ±n Ã§ekilmesi
+Card Deck::getRandomCard() //rastgele bir kartın çekilmesi
 {
-    srand(time(NULL)); //aynÄ± sayÄ±nÄ±n gelmesi engellendi
-    int random = rand() % cards.size() + 1; // random sayÄ± oluÅŸturuldu
+    srand(time(NULL)); //aynı sayının gelmesi engellendi
+    int random = rand() % cards.size() + 1; // random sayı oluşturuldu
     random = random - 1; //1 eksiltildi
-    Card card = this->cards.at(random); // random sayÄ±nÄ±n olduÄŸu yerdeki kart objeye atandÄ±
-    return card; //kart sisteme gÃ¶nderildi
+    Card card = this->cards.at(random); // random sayının olduğu yerdeki kart objeye atandı
+    return card; //kart sisteme gönderildi
 }
 
-void Deck::moveToEnd(Card card) //kartÄ± destenin sonuna aktarma
+void Deck::moveToEnd(Card card) //kartı destenin sonuna aktarma
 {
-    vector<Card>::iterator it; //bir vektÃ¶r tasarladÄ±k
-    it = find(this->cards.begin(), this->cards.end(), card); // bu vektÃ¶re sona gÃ¶nderilecek kartÄ± bulmasÄ±nÄ± sÃ¶yledik
-    this->cards.erase(it); //kartÄ± mevcut konumundan sildik
-    this->cards.push_back(card); //ÅŸimdi de onu en sona aktardÄ±k.
+    vector<Card>::iterator it; //bir vektör tasarladık
+    it = find(this->cards.begin(), this->cards.end(), card); // bu vektöre sona gönderilecek kartı bulmasını söyledik
+    this->cards.erase(it); //kartı mevcut konumundan sildik
+    this->cards.push_back(card); //şimdi de onu en sona aktardık.
 
 }
 
-void Deck::printDeck() //destenin tamamÄ±nÄ±n yazdÄ±rÄ±lmasÄ±
+void Deck::printDeck() //destenin tamamının yazdırılması
 {
-    for (int i = 0; i < this->cards.size(); ++i) //destenin tamamÄ±nÄ±n taranmasÄ± saÄŸlanÄ±yor
+    for (int i = 0; i < this->cards.size(); ++i) //destenin tamamının taranması sağlanıyor
     {
-        Card card = this->cards.at(i); //belirtilen konumdaki kart objeye atanÄ±yor
-        card.printCard(); //obje yazÄ±dÄ±rÄ±lma iÅŸlemine yollanÄ±yor.
+        Card card = this->cards.at(i); //belirtilen konumdaki kart objeye atanıyor
+        card.printCard(); //obje yazıdırılma işlemine yollanıyor.
     }
 }
 
-void Deck::swap(Card *xp, Card *yp) //kartlarÄ±n birbiriyle olan yerlerinin deÄŸiÅŸtirilmesi
+void Deck::swap(Card* xp, Card* yp) //kartların birbiriyle olan yerlerinin değiştirilmesi
 {
-    Card temp = *xp; //bir geÃ§ici deÄŸiÅŸkene 1. kart atanÄ±yor
-    *xp = *yp; //1. kart ile 2. kart deÄŸiÅŸtiriliyor
+    Card temp = *xp; //bir geçici değişkene 1. kart atanıyor
+    *xp = *yp; //1. kart ile 2. kart değiştiriliyor
     *yp = temp; // 2. kart 1. kart oluyor
 }
 
-void Deck::clear() //kartlarÄ± temizleme
+void Deck::clear() //kartları temizleme
 {
     this->cards.clear(); //temizledik.
 
 }
 
-vector<Card> Deck::getCards() const //kartÄ± gÃ¶nderme iÅŸlemi
+vector<Card> Deck::getCards() const //kartı gönderme işlemi
 {
     return cards;
 }

@@ -1,0 +1,298 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'menu::selection' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/menu.h"
+                },
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "menu::{ctor}",
+                  "decoratedName": "??0menu@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "menu::selection"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'menu::wayChoose' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/menu.h"
+                },
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "menu::{ctor}",
+                  "decoratedName": "??0menu@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "menu::wayChoose"
+          }
+        },
+        {
+          "ruleId": "C26444",
+          "message": {
+            "text": "Adı olmayan bir yerel değişkeni bildirmeye çalışmayın (es.84)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/main.cpp"
+                },
+                "region": {
+                  "startLine": 649,
+                  "startColumn": 8
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "main",
+                  "decoratedName": "main",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26444",
+          "message": {
+            "text": "Adı olmayan bir yerel değişkeni bildirmeye çalışmayın (es.84)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/main.cpp"
+                },
+                "region": {
+                  "startLine": 651,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "main",
+                  "decoratedName": "main",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Hand::isSerialHand' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/hand.h"
+                },
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 1,
+                  "endLine": 64,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Hand::{ctor}",
+                  "decoratedName": "??0Hand@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Hand::isSerialHand"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Hand::isDrawCard' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/hand.h"
+                },
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 1,
+                  "endLine": 64,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Hand::{ctor}",
+                  "decoratedName": "??0Hand@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Hand::isDrawCard"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Hand::isCardHandle' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/hand.h"
+                },
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 1,
+                  "endLine": 64,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Hand::{ctor}",
+                  "decoratedName": "??0Hand@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Hand::isCardHandle"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.33.31630.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/menu.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "6e3b7f75d97602a2dd3e68f1d72e4944d666f53b34ded70852dde5f6edb466cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/main.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "98eeb55a16b6b579b2ea208a7611f28eb03d164dfdd15c755bef5a850c2fdb95"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/hand.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "caa411b1f0219ddba48383268367552e7980d653fba3103adf1b7d76d9b75d9b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/card.h"
+          },
+          "hashes": {
+            "sha-256": "8a34baa283e8793ae82505be4fb18b44f0c1875adbc953fbe4033e2fafc78432"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/deck.h"
+          },
+          "hashes": {
+            "sha-256": "5e7af8a18ab1d8f70ac50a8a67c050972529ff26fff9cbe607c8e03cc1e8000a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/per.h"
+          },
+          "hashes": {
+            "sha-256": "fec707930881d969e1e6a6bbbbd65cc567c669d5eb522de40ffacd51d5e17ba1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/startup.h"
+          },
+          "hashes": {
+            "sha-256": "7d48391ab177b9361ebace059abce1b13962c6e62f6a06dc99c00fc6fd5e8e94"
+          }
+        }
+      ]
+    }
+  ]
+}

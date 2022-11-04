@@ -26,10 +26,10 @@ public:
 
     void clear();
 
-private :
+private:
     vector<Card> cards;
 
-    void swap(Card *xp, Card *yp);
+    void swap(Card* xp, Card* yp);
 };
 
 #endif // DECK_H

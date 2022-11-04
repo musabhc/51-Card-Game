@@ -30,16 +30,16 @@ public:
 
     void printCard();
 
-    bool operator==(const Card &i) const { return this->id == i.id; }
+    bool operator==(const Card& i) const { return this->id == i.id; }
 
-    bool operator!=(const Card &i) const { return this->id != i.id; }
+    bool operator!=(const Card& i) const { return this->id != i.id; }
 
-    bool operator>(const Card &i) const { return this->id > i.id; }
+    bool operator>(const Card& i) const { return this->id > i.id; }
 
-    bool operator<(const Card &i) const { return this->id < i.id; }
+    bool operator<(const Card& i) const { return this->id < i.id; }
 
 
-private :
+private:
     int id;
     int cardNumber;
     CardType cardType;

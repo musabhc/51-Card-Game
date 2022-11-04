@@ -1,0 +1,2 @@
+C:\Users\mbhc4\source\repos\CardGame\x64\Debug\CardGame.exe.lastcodeanalysissucceeded
+C:\Users\mbhc4\source\repos\CardGame\CardGame\x64\Debug\NativeCodeAnalysis.read.1.tlog

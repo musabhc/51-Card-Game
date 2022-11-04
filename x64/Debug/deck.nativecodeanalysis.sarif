@@ -1,0 +1,109 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Aritmetik taşma: '+' işleci bir 4 bayt değer üzerinde kullanılarak sonuç bir 8 bayt değere dönüştürülüyor. Taşmayı önlemek için '+' işlecini çağırmadan önce değeri daha geniş bir türe dönüştürün (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/deck.cpp"
+                },
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 54,
+                  "endLine": 29,
+                  "endColumn": 58
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Deck::sortDeck",
+                  "decoratedName": "?sortDeck@Deck@@QEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Aritmetik taşma: '+' işleci bir 4 bayt değer üzerinde kullanılarak sonuç bir 8 bayt değere dönüştürülüyor. Taşmayı önlemek için '+' işlecini çağırmadan önce değeri daha geniş bir türe dönüştürün (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/deck.cpp"
+                },
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 58,
+                  "endLine": 32,
+                  "endColumn": 62
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Deck::sortDeck",
+                  "decoratedName": "?sortDeck@Deck@@QEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.33.31630.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/mbhc4/source/repos/CardGame/CardGame/deck.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "fa2f704645795bf458db37dfc5e23eb3268a099342f1cda15a29e1843f5c2e3b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/deck.h"
+          },
+          "hashes": {
+            "sha-256": "5e7af8a18ab1d8f70ac50a8a67c050972529ff26fff9cbe607c8e03cc1e8000a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/mbhc4/source/repos/cardgame/cardgame/card.h"
+          },
+          "hashes": {
+            "sha-256": "8a34baa283e8793ae82505be4fb18b44f0c1875adbc953fbe4033e2fafc78432"
+          }
+        }
+      ]
+    }
+  ]
+}

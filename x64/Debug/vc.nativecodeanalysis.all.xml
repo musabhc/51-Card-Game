@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\mbhc4\source\repos\CardGame\CardGame\</FILEPATH>
+      <FILENAME>deck.cpp</FILENAME>
+      <LINE>29</LINE>
+      <COLUMN>55</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Aritmetik taşma: '+' işleci bir 4 bayt değer üzerinde kullanılarak sonuç bir 8 bayt değere dönüştürülüyor. Taşmayı önlemek için '+' işlecini çağırmadan önce değeri daha geniş bir türe dönüştürün (io.2).</DESCRIPTION>
+    <FUNCTION>Deck::sortDeck</FUNCTION>
+    <DECORATED>?sortDeck@Deck@@QEAAXXZ</DECORATED>
+    <FUNCLINE>21</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\mbhc4\source\repos\CardGame\CardGame\</FILEPATH>
+      <FILENAME>deck.cpp</FILENAME>
+      <LINE>32</LINE>
+      <COLUMN>59</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Aritmetik taşma: '+' işleci bir 4 bayt değer üzerinde kullanılarak sonuç bir 8 bayt değere dönüştürülüyor. Taşmayı önlemek için '+' işlecini çağırmadan önce değeri daha geniş bir türe dönüştürün (io.2).</DESCRIPTION>
+    <FUNCTION>Deck::sortDeck</FUNCTION>
+    <DECORATED>?sortDeck@Deck@@QEAAXXZ</DECORATED>
+    <FUNCLINE>21</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\mbhc4\source\repos\CardGame\CardGame\</FILEPATH>
+      <FILENAME>menu.h</FILENAME>
+      <LINE>22</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'menu::selection' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6).</DESCRIPTION>
+    <FUNCTION>menu::{ctor}</FUNCTION>
+    <DECORATED>??0menu@@QEAA@XZ</DECORATED>
+    <FUNCLINE>22</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>menu::selection</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\mbhc4\source\repos\CardGame\CardGame\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>649</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26444</DEFECTCODE>
+    <DESCRIPTION>Adı olmayan bir yerel değişkeni bildirmeye çalışmayın (es.84).</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>398</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\mbhc4\source\repos\CardGame\CardGame\</FILEPATH>
+      <FILENAME>main.cpp</FILENAME>
+      <LINE>651</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26444</DEFECTCODE>
+    <DESCRIPTION>Adı olmayan bir yerel değişkeni bildirmeye çalışmayın (es.84).</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>398</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\mbhc4\source\repos\CardGame\CardGame\</FILEPATH>
+      <FILENAME>hand.h</FILENAME>
+      <LINE>64</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'Hand::isSerialHand' değişkeni başlatılmamış. Her zaman bir üye değişkenini başlatın (type.6).</DESCRIPTION>
+    <FUNCTION>Hand::{ctor}</FUNCTION>
+    <DECORATED>??0Hand@@QEAA@XZ</DECORATED>
+    <FUNCLINE>64</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Hand::isSerialHand</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>
